@@ -13,7 +13,9 @@ using namespace std;
 int main()
 {
 	cout << "Malik St.Cyr!" << endl;
+	cout << " " << endl;
 	cout << "mst.cyr986@student.msjc.edu" << endl;
+	cout << " " << endl;
 	cout << "January 18th,2020" << endl;
 
 };
