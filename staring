@@ -1,9 +1,20 @@
+/*
+Malik St. Cyr
+ID: 0578986
+January 18th, 2020
+Assignment #1
+This is lab 1 which outputs to the screen my personal information
+*/
+
 #include <iostream>
+
 using namespace std;
+
 int main()
 {
-  cout<<"SOME MEN?"<<endl;
-  
-  return 0;
+	cout << "Malik St.Cyr!" << endl;
+	cout << "mst.cyr986@student.msjc.edu" << endl;
+	cout << "January 18th,2020" << endl;
 
-}
+};
+
