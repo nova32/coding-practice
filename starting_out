@@ -1,22 +1,12 @@
-/*
-Malik St. Cyr
-ID: 0578986
-January 18th, 2020
-Assignment #1
-This is lab 1 which outputs to the screen my personal information
-*/
-
-#include <iostream>
-
+#include 
 using namespace std;
 
-int main()
-{
-	cout << "Malik St.Cyr!" << endl;
-	cout << " " << endl;
-	cout << "mst.cyr986@student.msjc.edu" << endl;
-	cout << " " << endl;
-	cout << "January 18th,2020" << endl;
-
-};
+int main() {
+    
+    for (int i = 0; i < 100000; i++) {
+        cout << "hello" << endl;
+        
+    }
+       
+}
 
