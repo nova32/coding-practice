@@ -23,7 +23,7 @@ int main() {
     } else if (value == "-") {
         cout << (x-y) << endl;
     } else {
-        cout << "what is you doin'" << endl;
+        cout << "What is you doin... Input an operator" << endl;
     }
 }
 
