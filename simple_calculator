@@ -34,3 +34,74 @@ int main() {
     }
     
 }
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+	int value;
+	int value2;
+	int choice;
+
+	//cout << " Enter a value " << endl;
+	//cin >> value >> value2;
+
+	cout << " Enter a operation " << endl;
+	cout << "1. Add Values" << endl;
+	cout << "2. Subtract Values" << endl;
+	cout << "3. Multiply Values" << endl;
+	cout << "4. Divide Values" << endl;
+	cout << "5. Square Root Value" << endl;
+	cout << "6. Square Value" << endl;
+	cout << "7. Cube Value" << endl;
+	cin >> choice;
+
+	cout << " Enter two numbers " << endl;
+	cin >> value >> value2;
+
+	switch (choice)
+	{
+	case 1:
+		cout << " The sum of your number is " << value + value2 << endl;
+		break;
+	case 2:
+		cout << " The difference of your number is " << value - value2 << endl;
+		break;
+	case 3:
+		cout << " The product of your number is " << value * value2 << endl;
+		break;
+	case 4:
+		cout << " The quotient of your number is " << value / value2 << endl;
+		break;
+	default:
+		cout << " Invalid Operation " << endl;
+	}
+	
+	int valueA;
+	
+	cout << " Enter a number " << endl;
+	cin >> value;
+
+	switch (choice)
+	{
+	case 5:
+		 cout << " The square root of your number is " << sqrt(valueA)<< endl;
+		 break;
+	case 6:
+		cout << " Your number squared is " << valueA * valueA << endl;
+		break;
+	case 7:
+		cout << " Your number cubed is " << valueA*valueA*valueA << endl;
+		break;	
+	default:
+		cout << " Invalid Operation " << endl;
+	}
+
+	return 0;
+}
