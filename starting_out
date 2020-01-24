@@ -1,4 +1,35 @@
 #include <iostream>
+using namespace std;
+
+int main() {
+    
+    int x = 0;
+    int y = 0;
+    string value;
+    
+    cout << "Input first number: ";
+    cin >> x;
+    cout << "Input second number: ";
+    cin >> y;
+    cout << "Choose an operator (+,-,/,*): ";
+    cin >> value;
+    
+    if (value == "+") {
+        cout << (x+y) << endl;
+    } else if (value == "*") {
+        cout << (x*y) << endl;
+    } else if (value == "/") {
+        cout << (x/y) << endl;
+    } else if (value == "-") {
+        cout << (x-y) << endl;
+    } else {
+        cout << "what is you doin'" << endl;
+    }
+}
+
+
+
+#include <iostream>
 #include <iomanip>
 
 using namespace std;
@@ -39,15 +70,3 @@ int main()
 
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
