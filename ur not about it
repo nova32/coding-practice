@@ -1,0 +1,4 @@
+Create a program that randomly chooses a number between 1-10 
+Ask the user to guess (input) what they think the number is UNTIL they get it right
+Once they get it right, tell them they are correct and also show how many tries it took them to guess correctly
+
