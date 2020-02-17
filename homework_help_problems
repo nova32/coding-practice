@@ -47,6 +47,9 @@ Ex: If the input is:
 the output is:
 8.80
 
+Your program must define and call a function:
+double MilesToLaps(double userMiles)
+
 #include <iostream>
 #include <iomanip>                 // For setprecision
 using namespace std;
