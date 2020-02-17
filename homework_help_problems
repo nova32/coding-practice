@@ -9,15 +9,13 @@ Base area = base length x base width.
 #include <iostream>
 using namespace std;
 
-   PyramidVolume(double baseLength, double baseWidth)
+    double PyramidVolume(double baseLength, double baseWidth, double pyramidHeight)  //pyramidvolume is created
    {
+      double baseArea = baseLength * baseWidth;
+      float pyramidVolume = baseArea * pyramidHeight * 1/3;  
       
-      
-      
-      
-      return double pyramidHeight
+      return 0;
    }
-
 
 
 int main() {
