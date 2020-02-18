@@ -1,1 +1,21 @@
+#include <iostream>
+#include <iomanip>              
+using namespace std;
 
+double MilesToLaps(double inputLaps)
+{
+   double calculation;
+   calculation = inputLaps / 0.25;
+   
+   return calculation;
+}
+
+int main() 
+{
+   double userInput = 0;
+   cin >> userInput;
+
+   cout << fixed << setprecision(2) << MilesToLaps(userInput) << endl;
+   
+   return 0;
+}
