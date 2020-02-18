@@ -1,0 +1,330 @@
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+using namespace std;
+
+//Will return a number from 1 to 13, representing the face of a card
+int draw_card() { return rand() % 13 + 1; }
+
+int main() {
+    const int BET = 10;
+    //This will allow you to control chance, to make testing easier
+    cout << "Please choose a random seed, or 0 to use the current time:\n";
+    int seed = 0;
+    cin >> seed;
+    if (seed == 0) srand(time(0));
+    else srand(seed);
+
+    cout << "Welcome to Blackjack-40!\n\n";
+
+    //YOU: Create an integer named money and set it to 100
+
+    //YOU: Do this (and all lines below) in an infinite loop...
+
+        cout << "You currently have $" << money << " and are betting $" << BET << endl;
+
+        //YOU: For each player...
+
+            //YOU: Make an integer called total holding the total value of the players card and initialize it to 0
+            //YOU: Using a for loop, deal 4 cards to the player
+            int card = draw_card(); //This is how you deal a card
+            //YOU: Handle face cards. I.e., if the card is >= 10 set the card to 10
+
+            //YOU: Handle aces (a 1 is worth 11)
+            cout << "You drew a " << card << endl;
+
+            //YOU: Add the card's value to the total
+
+            //Then we print the total
+            cout << "The total value of your cards is: " << total << endl;
+
+            //YOU: Make an infinite loop for the players drawing cards until they bust or stay or quit
+                cout << "Do you wish to 1) Hit or 2) Stay or 3) Quit?\n";
+
+        //YOU: After the players are done, draw cards for the dealer until they get a 35 or higher, or bust
+        cout << "Dealer drew a " << card << endl;
+
+        //YOU: Check for loss. If the player has 0 dollars or less, they lose
+        cout << "YOU LOSE! GAME OVER!\n";
+        //YOU: Check for win. If the player has 200 dollars or more, they win
+        cout << "A WINNER IS YOU! GAME OVER!\n";
+}
+
+for this assignment, you will be playing a variant of Blackjack where the
+player tries to get as close to 40 as possible without going over. The player
+starts with $100 and always $10 per hand. If they go over, they "go bust" and
+pay $10 to the dealer.
+
+Once they finish, the dealer will go, and will draw cards until they get a 36
+or higher. If the dealer goes over 40, the dealer goes bust and pays $10 to
+the player if they have not gone bust.
+
+If the dealer doesn't go bust, then the dealer's score is compared with the
+score of the player. If they player is higher than the dealer's, they gain
+$10, they lose $10 if they have less, and no money is exchanged on a tie.
+
+The value of a card is the face value (i.e. an 8 is worth 8 points, a
+jack/queen/king is worth 10) except for aces, which count either as 11 or 1,
+whichever is more advantageous for the player. I recommend when you start just
+always treating it as an 11 and worrying about handling this after doing
+everything else.
+
+Playing a game of Blackjack-40:
+1) The player is initially dealt four cards
+2) If they are dealt a 40, they print "BLACKJACK 40!" and they win $20.
+3) They can choose to hit or stay or quit. Hit means they are dealt another card.
+If they hit and go over 40, they go bust and pay $10 to the dealer. If they
+hit they can continue hitting until they bust or choose to stay or quit.
+Stay means they keep their total and the dealer gets to go.
+Quit means the game terminates.
+4) After the player is done, deal cards for the dealer until they get a 35
+or higher.
+5) Handle the money payments as described above. If the player wins they gain
+$10, if they lose they lose $10, if they tie no money is exchanged.
+6) If the player hits $200 they win the game, if they hit $0 they lose the
+game, and the game ends.
+7) Otherwise, go back up to #1 and do it again
+
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+using namespace std;
+
+int aces_count = 0;
+
+//Will return a number from 1 to 13, representing the face of a card
+int draw_card()
+{
+    int card = rand() % 13 + 1;
+
+    if (card == 1)
+    {
+        aces_count++;
+        card = 11;
+    }
+
+    return card;
+}
+
+int main() {
+    const int BET = 10;
+    int player_account = 0;
+    int dealer_account = 0;
+
+
+    int card = 0;
+    //This will allow you to control chance, to make testing easier
+
+    cout << "Please choose a random seed, or 0 to use the current time:\n";
+    int seed = 0;
+    cin >> seed;
+    if (seed == 0) srand(time(0));
+    else srand(seed);
+
+    //INTRO --------------------------------------------------------------------------
+    cout << "Welcome to Blackjack-40!\n\n";
+    //YOU: Create an integer named money and set it to 100
+
+    player_account = 100;
+    dealer_account = 100;
+
+    //YOU: Do this (and all lines below) in an infinite loop...
+
+    while(true)
+    {
+
+    //infinite loop while(true) 
+
+        cout << "You currently have $" << player_account << " and are betting $" << BET << endl;
+
+        int player_total = 0;
+        int dealer_total = 0;
+ //DEALING CARDS FOR PLAYER  --------------------------------------------------------------------
+        //YOU: For each player...
+        for (int player = 0; player < 1; ++player)
+        {
+            //YOU: Make an integer called total holding the total value of the players card and initialize it to 0
+
+            //YOU: Using a for loop, deal 4 cards to the player
+            for (int dealing_cards = 0; dealing_cards < 4; ++dealing_cards)
+            {
+                card = draw_card(); //This is how you deal a card
+                //YOU: Handle face cards. I.e., if the card is >= 10 set the card to 10
+
+                //YOU: Handle aces (a 1 is worth 11)
+                cout << "You drew a " << card << endl;
+
+                //YOU: Add the card's value to the total 
+                player_total += card;
+            }
+            //Then we print the total
+
+            while (player_total > 40 && aces_count) {
+            aces_count--;
+            player_total -= 10;
+            }
+
+            cout << "The total value of your cards is: " << player_total << endl;
+
+
+            if (player_total == 40)
+            {
+                cout << "BLACKJACK!" << endl;
+            }
+
+
+            //YOU: Make an infinite loop for the players drawing cards until they bust or stay or quit
+            //PLAYER ------------------------------------------------------------------------
+
+            while (true)
+            {
+
+                cout << "Do you wish to 1) Hit or 2) Stay or 3) Quit?\n";
+                int response = 0;
+                cin >> response;
+
+                if (response == 1)
+                {
+                    //player gets another card
+                    card = draw_card();
+                    player_total += card;
+                    
+                    while (player_total > 40 && aces_count) {
+                    aces_count--;
+                    player_total -= 10;
+                    }
+
+                    cout << "You drew a " << card << endl;
+                    cout << "The total value of your cards is: " << player_total << endl;
+
+                    if (player_total == 40)
+                    {
+                        //player wins
+                        cout << "BLACKJACK!" << endl;
+                        break;
+                    }
+                    else if (player_total > 40)
+                    {
+                        //player busts
+                        cout << "BUSTED!" << endl;
+                        break;
+                    }
+
+                }
+                else if (response == 2)
+                {
+                    //player to stay
+                    break;
+                }
+                else
+                {
+                    //player to exit program
+                    exit(0);
+                }
+
+            }//end while 
+
+        }// end for
+        
+        
+        //DEALER --------------------------------------------------------------- 
+        while(true)
+        {
+
+            card = draw_card();
+            cout << "Dealer drew a " << card << endl;
+            dealer_total += card;
+
+            while (dealer_total > 40 && aces_count)
+            {
+            aces_count--;
+            dealer_total -= 10;
+            }
+
+            //check if 40 print blackjack
+            if (dealer_total == 40)
+            {
+                //dealer wins
+                cout << "BLACKJACK!" << endl;
+                break;
+            }
+
+            //check if total > 40
+            else if (dealer_total > 40)
+            {
+                //dealer busts
+                cout << "BUSTED!" << endl;
+
+                break;
+
+            }
+            //check for 35 and higher stop
+            else if (dealer_total >= 35 && dealer_total < 40)
+            {
+                //dealer maintains values
+                break;
+
+            }
+
+        } // end while
+        cout << "The total value of dealer cards is: " << dealer_total << endl;
+
+        //SCORE ----------------------------------------------------------------
+
+        // Both bust
+        
+        if (player_total > 40 && dealer_total > 40)
+        {
+            player_account -= BET;
+            dealer_total -= BET;
+        }
+
+        // 1. 
+        else if (player_total > 40)
+        {
+            player_account -= BET;
+            dealer_account += BET;
+        }
+        else if (dealer_total > 40)
+        {
+            player_account += BET;
+            dealer_account -= BET;
+        }
+
+        // 2.
+        else if (player_total < dealer_total)
+        {
+            player_account -= BET;
+            dealer_account += BET;
+            cout << "Dealer wins $" << BET << " dollars" << endl;
+        }
+
+        // 3.
+        else if (dealer_total < player_total)
+        {
+            dealer_account -= BET;
+            player_account += BET;
+            cout << "Player wins $" << BET << " dollars" << endl;
+        }
+
+
+        // 4.
+        else if (player_total == dealer_total)
+        {
+            cout << "Push." << endl;
+        }
+
+        else {}
+
+        if (player_account <= 0) {
+            cout << "YOU LOSE! GAME OVER!\n";
+            break;
+        }
+        //YOU: Check for win. If the player has 200 dollars or more, they win
+        if (player_account >= 200) {
+            cout << "A WINNER IS YOU! GAME OVER!\n";
+            break;
+        }
+        
+    }
+} // end main
