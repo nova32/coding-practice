@@ -21,8 +21,7 @@ double MilesToLaps(double userMiles)
    return userMiles/0.25;
 }
 
-#include <iostream>
-#include <iomanip>              
+#include <iomanip>
 using namespace std;
 
 double MilesToLaps(double inputLaps)
@@ -33,12 +32,13 @@ double MilesToLaps(double inputLaps)
    return calculation;
 }
 
-int main() 
+int main()
 {
    double userInput = 0;
-   cin >> userInput;
+    cout << "Input number of mile(s) you completed: ";
+    cin >> userInput;
 
-   cout << fixed << setprecision(2) << "You have done " << MilesToLaps(userInput) << " laps." endl;
+   cout << fixed << setprecision(2) << "You have done " << MilesToLaps(userInput) << " laps." << endl;
    
    return 0;
 }
