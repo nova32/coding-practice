@@ -1,4 +1,27 @@
 #include <iostream>
+#include <iomanip> //For setprecision
+using namespace std;
+
+double MilesToLaps(double userMiles);
+int main() 
+{
+    double userMiles = 0;
+    double laps = MilesToLaps(userMiles);
+
+    cout << "How many miles did you run? " << endl;
+    cin >> userMiles;
+    cout <<fixed<<setprecision(2)<< "That's "<< MilesToLaps(userMiles) << " laps"<<endl;
+
+    return 1;
+}
+double MilesToLaps(double userMiles)
+{
+    //double laps = userMiles / 0.25;
+
+   return userMiles/0.25;
+}
+
+#include <iostream>
 #include <iomanip>              
 using namespace std;
 
