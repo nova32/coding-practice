@@ -1,1 +1,24 @@
-#
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+/* Define your function here */ 
+double StepsToMiles(double userInputs)
+{
+   double calC;
+   calC = userInputs / 2000;
+   
+   return calC;
+}
+
+int main() {
+   /* Type your code here */
+   double numberOfSteps = 0; //input is number of steps
+   cin >> numberOfSteps;
+   
+   // output is miles walked
+
+   cout << fixed << setprecision(2) << StepsToMiles(numberOfSteps) << endl;
+
+   return 0;
+}
