@@ -95,3 +95,48 @@ int main() {
    return 0;
 }
 
+The Pythagorean theorem is a formula that is used to solve the different sides of a right angle triangle. Here is an example of such a triangle:
+
+Right angle triangle
+
+If you know the value of two of the sides you can solve for the third using one of the following equations
+
+ c\:=\:\sqrt{a^2+\:b^2}c = a 2 + b 2
+
+a\:=\:\sqrt{c^2-b^2}a = c 2 − b 2
+
+b = \sqrt{c^{2} - a^{2}  } b = c 2 − a 2
+
+ 
+
+Your task is to create a function that will solve for any side given two known sides.
+
+Specifics:
+
+Your function should take three parameters: a double for the first side, a double for the second side, and a character to indicate the side to solve for. Your function should return a double value which holds the solved side.
+
+For example:
+
+double a = 4.0, b = 2.0, c;
+
+c = pythag(a, b, 'c');
+
+Notice the last parameter is a character which indicates the side to solve for.  Suppose you want to solve for side a:
+
+double a, b = 4.0, c = 2.0;
+
+a = pythag(b, c, 'a');
+
+Required:
+
+You must use the sqrt and pow functions to solve for the given side.
+
+
+What not to do
+
+Using any of the following will drop your grade for this assignment by 70%
+
+global variables
+cin in pythag function
+cout in pythag function
+goto statements
