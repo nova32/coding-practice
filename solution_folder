@@ -15,7 +15,7 @@ int main()
    double userInput = 0;
    cin >> userInput;
 
-   cout << fixed << setprecision(2) << MilesToLaps(userInput) << endl;
+   cout << fixed << setprecision(2) << "You have done " << MilesToLaps(userInput) << " laps." endl;
    
    return 0;
 }
