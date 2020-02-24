@@ -1,142 +1,58 @@
-A pedometer treats walking 2,000 steps as walking 1 mile. 
-Write a program whose input is the number of steps, and whose output is the miles walked.
+#include<iostream>
+#include<ctime>
 
-Output each floating-point value with two digits after the decimal point, which can be achieved by executing
-cout << fixed << setprecision(2); once before all other cout statements.
-
-Ex: If the input is:
-5345
-
-the output is:
-2.67
-
-Your program must define and call a function:
-double StepsToMiles(int userSteps)
-
-#include <iostream>
-#include <iomanip>
 using namespace std;
 
-/* Define your function here */ 
+void fillArray(int myArray[][5], int size);
+void printArray(int myArray[][5], int size);
+int countNums(int myArray[][5], int size, int search);
 
-int main() {
-   /* Type your code here */
+int main()
+{
+	srand(static_cast<int>(time(0)));
+	int array[5][5];
 
-   return 0;
+	printArray(array, 5);
+	fillArray(array, 5);
+
+	cout << "What number do you wanna search for?" << endl;
+	int num;
+	cin >> num;
+	int count = countNums(array, num, 5);
+	cout << "Your number appears " <<count <<" times in the array" << endl;
+
+	return 0;
 }
-
-
-
-
-
-
-
-Define stubs for the functions called by the below main().
-Each stub should print "FIXME: Finish FunctionName()" followed by a newline, and should return -1. Example output: 
-
-FIXME: Finish GetUserNum()
-FIXME: Finish GetUserNum()
-FIXME: Finish ComputeAvg()
-Avg: -1
-
-
-#include <iostream>
-using namespace std;
-
-/* Your solution goes here  */
-
-int main() {
-   int userNum1;
-   int userNum2;
-   int avgResult;
-
-   userNum1 = GetUserNum();
-   userNum2 = GetUserNum();
-
-   avgResult = ComputeAvg(userNum1, userNum2);
-
-   cout << "Avg: " << avgResult << endl;
-
-   return 0;
+void fillArray(int myArray[][5], int size)
+{
+	for (int row = 0; row < 5; row++)
+	{
+		for (int col = 0; col < 5; col++)
+		{
+			myArray[row][col] = rand() % 10 + 1;
+		}
+	}
 }
-
-------------------------------------------------------------------------------------------------
-LAB:
-One lap around a standard high-school running track is exactly 0.25 miles. 
-Write a program that takes a number of miles as input, and outputs the number of laps.
-
-Output each floating-point value with two digits after the decimal point, which can be achieved by executing
-cout << fixed << setprecision(2); once before all other cout statements.
-
-Ex: If the input is:
-1.5
-
-the output is:
-6.00
-
-Ex: If the input is:
-2.2
-
-the output is:
-8.80
-
-Your program must define and call a function:
-double MilesToLaps(double userMiles)
-
-#include <iostream>
-#include <iomanip>                 // For setprecision
-using namespace std;
-
-/* Define your function here */ 
-
-int main() {
-   /* Type your code here. Your code must call the function.  */
-
-   return 0;
+void printArray(int myArray[][5], int size)
+{
+	for (int row = 0; row < 5; row++)
+	{
+		for (int col = 0; col < 5; col++)
+		{
+			cout << myArray[row][col] << '\t';
+		}
+	}
 }
-
-The Pythagorean theorem is a formula that is used to solve the different sides of a right angle triangle. Here is an example of such a triangle:
-
-Right angle triangle
-
-If you know the value of two of the sides you can solve for the third using one of the following equations
-
- c\:=\:\sqrt{a^2+\:b^2}c = a 2 + b 2
-
-a\:=\:\sqrt{c^2-b^2}a = c 2 − b 2
-
-b = \sqrt{c^{2} - a^{2}  } b = c 2 − a 2
-
- 
-
-Your task is to create a function that will solve for any side given two known sides.
-
-Specifics:
-
-Your function should take three parameters: a double for the first side, a double for the second side, and a character to indicate the side to solve for. Your function should return a double value which holds the solved side.
-
-For example:
-
-double a = 4.0, b = 2.0, c;
-
-c = pythag(a, b, 'c');
-
-Notice the last parameter is a character which indicates the side to solve for.  Suppose you want to solve for side a:
-
-double a, b = 4.0, c = 2.0;
-
-a = pythag(b, c, 'a');
-
-Required:
-
-You must use the sqrt and pow functions to solve for the given side.
-
-
-What not to do
-
-Using any of the following will drop your grade for this assignment by 70%
-
-global variables
-cin in pythag function
-cout in pythag function
-goto statements
+int countNums(int myArray[][5], int size, int search)
+{
+	int count = 0;
+	for (int row = 0; row < 5; row++)
+	{
+		for (int col = 0; col < 5; col++)
+		{
+			if (myArray[row][col] == search)
+				count++;
+		}
+	}
+	return count;
+}
