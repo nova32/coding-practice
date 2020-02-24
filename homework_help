@@ -57,3 +57,5 @@ int countNums(int myArray[][5], int size, int search)
 	}
 	return count;
 }
+
+http://www.cplusplus.com/forum/beginner/158250/
