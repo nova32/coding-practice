@@ -3,23 +3,23 @@
 
 using namespace std;
 
-void fillArray(int myArray[][5], int size);
-void printArray(int myArray[][5], int size);
-int countNums(int myArray[][5], int size, int search);
+void fillArray(int a[][5], int size);
+void printArray(int a[][5], int size);
+int countNums(int ar[][5], int size, int search);
 
 int main()
 {
 	srand(static_cast<int>(time(0)));
-	int array[5][5];
+	int ar[5][5];
 
-	printArray(array, 5);
-	fillArray(array, 5);
+	fillArray(ar, 5);
+	printArray(ar, 5);
 
 	cout << "What number do you wanna search for?" << endl;
 	int num;
 	cin >> num;
-	int count = countNums(array, num, 5);
-	cout << "Your number appears " <<count <<" times in the array" << endl;
+	int count = countNums(ar, 5, num);
+	cout << "Your number appears " << count <<" times in the array" << endl;
 
 	return 0;
 }
@@ -41,6 +41,7 @@ void printArray(int myArray[][5], int size)
 		{
 			cout << myArray[row][col] << '\t';
 		}
+		cout << endl;
 	}
 }
 int countNums(int myArray[][5], int size, int search)
