@@ -48,65 +48,71 @@ int main()
 	//int value;
 	//int value2;
 	int choice;
-	cout << " Enter a operation " << endl;
-	cout << "0. Pythagorean Theorum" << endl;
-	cout << "1. Add Values" << endl;
-	cout << "2. Subtract Values" << endl;
-	cout << "3. Multiply Values" << endl;
-	cout << "4. Divide Values" << endl;
-	cout << "5. Square Root Value" << endl;
-	cout << "6. Square Value" << endl;
-	cout << "7. Cube Value" << endl;
-	cout << "8. Cube Root Value" << endl;
-	cin >> choice;
-	int value;
-	int value2;
-	//int choice;
 
-	if (choice >= 5)
+	while (true)
 	{
-		cout << "Enter a number " << endl;
-		cin >> value;
-	}
-	else
-	{
+		//int chioce;
+		cout << " Enter a operation " << endl;
+
+		cout << "0. Pythagorean Theorum" << endl;
+		cout << "1. Add Values" << endl;
+		cout << "2. Subtract Values" << endl;
+		cout << "3. Multiply Values" << endl;
+		cout << "4. Divide Values" << endl;
+		cout << "5. Square Root Value" << endl;
+		cout << "6. Square Value" << endl;
+		cout << "7. Cube Value" << endl;
+		cout << "8. Cube Root Value" << endl;
+		cin >> choice;
+		int value;
+		int value2;
+		//int choice;
+
 		cout << "Enter two numbers " << endl;
 		cin >> value >> value2;
-	}
-	
-	switch (choice)
-	{
-	case 0:
-		cout << " C squared is equal to " << sqrt(pow(value, 2.0) + pow(value2, 2.0)) << endl;
-		break;
-	case 1:
-		cout << " The sum of your number is " << value + value2 << endl;
-		break;
-	case 2:
-		cout << " The difference of your number is " << value - value2 << endl;
-		break;
-	case 3:
-		cout << " The product of your number is " << value * value2 << endl;
-		break;
-	case 4:
-		cout << " The quotient of your number is " << value / value2 << endl;
-		break;
-	case 5:
-		cout << " The square root of your number is " << sqrt(value) << endl;
-		break;
-	case 6:
-		cout << " Your number squared is " << value * value << endl;
-		break;
-	case 7:
-		cout << " Your number cubed is " << value * value * value << endl;
-		break;
-	case 8:
-		cout << " The cube root of your number is " << cbrt(value) << endl;
-		break;
-	default:
-		cout << " Invalid Operation " << endl;
-	}
 
+		switch (choice)
+		{
+		case 0:
+			cout << " C squared is equal to " << sqrt(pow(value, 2.0) + pow(value2, 2.0)) << endl;
+			break;
+
+		case 1:
+			cout << " The sum of your number is " << value + value2 << endl;
+			break;
+		case 2:
+
+			cout << " The difference of your number is " << value - value2 << endl;
+			break;
+
+		case 3:
+			cout << " The product of your number is " << value * value2 << endl;
+			break;
+
+		case 4:
+			cout << " The quotient of your number is " << value / value2 << endl;
+			break;
+
+		case 5:
+			cout << " The square root of your number is " << sqrt(value) << endl;
+			break;
+
+		case 6:
+			cout << " Your number squared is " << value * value << endl;
+			break;
+
+		case 7:
+			cout << " Your number cubed is " << value * value * value << endl;
+			break;
+
+		case 8:
+			cout << " The cube root of your number is " << cbrt(value) << endl;
+			break;
+
+		default:
+			cout << " Invalid Operation " << endl;
+		}
+	}
 	return 0;
 }
 
