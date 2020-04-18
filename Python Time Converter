@@ -11,17 +11,47 @@ elif int(time_hour) > 12:
   new_time = int(time_hour) - 12
   print("It's " + str(new_time) + ':' + str(time_minute) + "PM" + "," + " Good afternoon!")
 
-#include<iostream>
+
+------------------------------------------------------------------------
+#include <iostream>
+
 using namespace std;
 
-int main(){
-string S = "hello";
+// TEST with convertToClockTime(0930) 
+// if you give 09:65 it returns you 10:05 
+// you can use this to add minutes if you need
 
-cout << S << endl;
+int main() {
 
-S = S.substr(0,3);
+int convertToClockTime(int number) {
 
-cout << S << endl;
+    stringstream  strStream;
+    strStream << number;
+    string orgString = strStream.str();
+    int length = orgString.length();
+    string minuteStr = "", hourStr = "";
+    if (length == 4) {
+        hourStr = orgString.substr(0, 2);//orgString[0];
+        minuteStr = orgString.substr(2, 2);//orgString[1] + orgString[2];
+    }
+    else if (length == 3) {
+        hourStr = orgString.substr(0, 1);//orgString[0];
+        minuteStr = orgString.substr(1, 2);//orgString[1] + orgString[2];
+    }
+    int minute = 0, hour = 0;
 
+    strStream.str("");
+    strStream.clear(); // Clear state flags.
+    strStream << hourStr << " " << minuteStr;
+    strStream >> hour >> minute;
 
+    if (minute > 59) {
+        hour++;
+        minute = minute % 60;
+    }
+
+    int clockTime = hour * 100 + minute;
+
+    return clockTime;
+}
 }
