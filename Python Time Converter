@@ -1,0 +1,12 @@
+time = input("What time is it?(HHMM in 24 hour format):" )
+time_hour = time[0:2]
+time_minute = time[2:4]
+if int(time_hour) < 12:
+  if int(time_hour == 0):
+    midnight_time = int(time_hour) + 12
+    print("It's " + str(midnight_time) + ':' + str(time_minute) + "," + " Good morning!")
+  else:
+    print("It's " + time_hour + ':' + time_minute + "AM" + "," + " Good morning!")
+elif int(time_hour) > 12:
+  new_time = int(time_hour) - 12
+  print("It's " + str(new_time) + ':' + str(time_minute) + "PM" + "," + " Good afternoon!")
