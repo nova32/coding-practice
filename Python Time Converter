@@ -10,3 +10,18 @@ if int(time_hour) < 12:
 elif int(time_hour) > 12:
   new_time = int(time_hour) - 12
   print("It's " + str(new_time) + ':' + str(time_minute) + "PM" + "," + " Good afternoon!")
+
+#include<iostream>
+using namespace std;
+
+int main(){
+string S = "hello";
+
+cout << S << endl;
+
+S = S.substr(0,3);
+
+cout << S << endl;
+
+
+}
